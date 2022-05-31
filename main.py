@@ -7,18 +7,20 @@ import string
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 
+csv_file_name = "data_science.csv"
+
 # Downloading DataSet Recommender By NLTK
 nltk.download('omw-1.4')
 
 # Read csv file into a pandas dataframe
-df = pd.read_csv("property data.csv")
+df = pd.read_csv(csv_file_name)
 
 # Take a look at the first few rows
 print("Real CSV Data: \n", df.head(), 'asd', df.columns.to_list())
 
 # Making a list of missing value types
 missing_values = ["n/a", "na", "--", " ", ""]
-df = pd.read_csv("property data.csv", na_values=missing_values)
+df = pd.read_csv(csv_file_name, na_values=missing_values)
 
 
 df.dropna(axis=0, how='any', thresh=None, subset=None, inplace=True)
