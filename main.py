@@ -7,9 +7,8 @@ import string
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 
-# Downloading
+# Downloading DataSet Recommender By NLTK
 nltk.download('omw-1.4')
-
 
 # Read csv file into a pandas dataframe
 df = pd.read_csv("property data.csv")
@@ -52,3 +51,9 @@ for column in all_columns:
         document = ' '.join(document)
         all_columns_data[column].append(document)
 
+
+for index, column_name in enumerate(all_columns_data.keys()):
+    new_df.insert(index, column_name, all_columns_data[column_name])
+
+print('Original:\n', df)
+print('After Lemmatizer\n', new_df)
