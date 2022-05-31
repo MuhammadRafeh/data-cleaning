@@ -36,6 +36,10 @@ stemmer = WordNetLemmatizer()
 
 for column in all_columns:
     all_columns_data[column] = []
+    if df[column].dtypes == 'float64' or df[column].dtypes == 'int64':
+        for data in df[column]:
+            all_columns_data[column].append(data)
+        continue
     for data in df[column]:
         document = re.sub(r'\W', ' ', str(data))
         documents = re.sub(re.escape(string.punctuation), ' ', document)
