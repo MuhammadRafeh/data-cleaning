@@ -16,7 +16,7 @@ df = pd.read_csv("property data.csv", na_values = missing_values)
 
 # Looking at the NUM_BEDROOMS column
 print (df['NUM_BEDROOMS'])
-print (df['NUM_BEDROOMS'].isnull())
+print (df['NUM_BEDROOMS'].isnull(), 'asd')
 
 
 # Looking at the OWN_OCCUPIED column
